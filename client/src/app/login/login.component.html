@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-login">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-6">
+                  <a href="#" class="active" id="login-form-link">Login</a>
+                </div>
+                <div class="col-xs-6">
+                  <a href="#" id="register-form-link">Register</a>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <form id="login-form" (submit)="login()" #formData2="ngForm" style="display: block;">
+                    <div class="form-group">
+
+                      <input type="text" name="email" [(ngModel)]="user_login.email" required pattern="[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})"
+                        class="form-control" placeholder="Email" #login_email="ngModel">
+                    </div>
+                    <div class="alert alert-warning" *ngIf="login_email.invalid && (login_email.dirty || login_email.touched)">
+                      <strong>Warning! please fill in your email !!!</strong>
+                    </div>
+
+
+                    <div class="form-group">
+                      <input type="password" name="password" [(ngModel)]="user_login.password" required minlength="5" id="password" class="form-control"
+                        placeholder="Password" #login_password="ngModel">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="login_password.invalid && (login_password.dirty || login_password.touched)">
+                      <strong>A Wow! password is required !!!</strong>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                          <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+
+                  <!-- Registration Section  -->
+                  <form id="register-form" (submit)="register()" #formData1="ngForm" style="display: none;">
+                    <div class="form-group">
+                      <input type="text" [(ngModel)]="user_reg.first_name" required minlength="3" #first_name="ngModel" class="form-control" name="first_name"
+                        placeholder="First Name">
+                    </div>
+                    <div class="alert alert-warning" *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)">
+                      <strong>Warning! user name is required and must be 3 characters long !!!
+                      </strong>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" [(ngModel)]="user_reg.last_name" required minlength="3" #last_name="ngModel" class="form-control" name="last_name"
+                        placeholder="User Name">
+                    </div>
+                    <div class="alert alert-warning" *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)">
+                      <strong>Warning! user name is required and must be 3 characters long !!!
+                      </strong>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="email" [(ngModel)]="user_reg.email" required pattern="[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})" #email="ngModel"
+                        name="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="alert alert-warning" *ngIf="email.invalid && (email.dirty || email.touched)">
+                      <strong>A Wow! email is required and checking the format !!!</strong>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="password" name="password" [(ngModel)]="user_reg.password" #password="ngModel" required minlength="5" class="form-control"
+                        placeholder="Password">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                      <strong>A Wow! password is required and must be 5 characters long !!!</strong>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="password" [(ngModel)]="pass_confir" required minlength="9" #pw_confirm="ngModel" pattern="{{user_reg.password}}"
+                        placeholder="password confirmation" class="form-control" name="pw_confirm">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="pw_confirm.invalid && (pw_confirm.dirty || pw_confirm.touched)">
+                      <strong>A Wow! password is not matched !!!</strong>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                          <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Course Detail Here</h1>
+    <hr>
+    <div class="box">
+      <button (click)="logout()" class="btn btn-danger">Log Out</button>
+      <button class="btn btn-indo">
+        <a [routerLink]="['/create']">
+          Go Back to Homepage
+        </a>
+      </button>
+    </div>
+    <hr>
+    <div class="jumbotron">
+      <h1 class="display-2">Let's change course!</h1>
+      <form class="form-horizontal" (submit)="updateCourse()">
+        <label class="control-label">
+          Course Name:
+        </label>
+        <div class="form-group">
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="courseName" [(ngModel)]="course.courseName" placeholder="{{course.courseName}}"
+              #courseData="ngModel">
+          </div>
+        </div>
+        <div class="alert alert-warning" *ngIf="courseData.invalid && (courseData.dirty || courseData.touched)">
+          <strong>
+            Warning! please fill in course name !!!
+          </strong>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-2"> Course Date:</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="date" [(ngModel)]="course.date" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-2">Course Description:</label>
+          <div class="col-md-10">
+            <textarea class="form-control" rows="5" name="description" [(ngModel)]="course.description" placeholder="course.description"
+              #desData="ngModel"></textarea>
+          </div>
+        </div>
+        <div class="alert alert-warning" *ngIf="desData.invalid && (desData.dirty || desData.touched)">
+          <strong>
+            Warning! please fill in course descriptions !!!
+          </strong>
+        </div>
+
+
+        <p class="lead">
+          <button type="submit" class="btn btn-primary btn-lg" role="button">Confirm Edit</button>
+        </p>
+      </form>
+    </div>
+
+
+
+  </div>
+</body>
+
+</html>

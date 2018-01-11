@@ -1,0 +1,79 @@
+  .box {
+    display: inline-block;
+  }
+  .box button {
+    margin-left: 825px;
+  }
+  
+  body {
+    background: url(/assets/images/pexels-photo-164642.jpeg) no-repeat center center;
+    -webkit-background-attachment: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 0;
+    position: relative;
+    height: 1000px;
+  }
+  
+  /* A tag style */
+  
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #searchbar{
+    background-color: #1222;
+    color: #fff;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  #hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 25px;
+    border-radius: 15px;
+  }
+  #hover a {
+    padding: 15px 35px;
+    text-align: center;
+  }
+  #hover:hover{
+    background-color: #4fcaef;
+  }
+  
+  #course {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    margin-top: 30px;
+    border-radius: 15px;
+    width: 205px;
+  }
+  
+  #course a{
+    padding: 15px 35px;
+    text-align: center;
+  }
+  
+  #course:hover{
+    background-color: #4fcaef;
+  }
+  
+  
+  /*table style*/
+  
+  table {
+    border: 1px solid black;
+    height: 450px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #8888;
+    opacity: 0.9;
+  }
+  
+

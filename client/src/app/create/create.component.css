@@ -1,0 +1,9 @@
+body {
+    background: url(/assets/images/pexels-photo-352876.jpeg) no-repeat center center;
+    -webkit-background-attachment: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 0;
+    position: relative;
+    height: 1000px;
+  }

@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" courseName="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" courseName="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Enroll a Course</h1>
+    <div class="box">
+      <button (click)="logout()" class="btn btn-danger" style="float: right; ">Log Out</button>
+    </div>
+    <div class="box">
+      <button id="hover" class="btn btn-info">
+        <a [routerLink]="['/create']">Home</a>
+      </button>
+    </div>
+    <hr>
+
+    <!-- Form Section -->
+    <form class="form-horizontal" (submit)="createCourse()" #coData="ngForm">
+        <div class="form-group">
+            <label class="control-label col-md-2"> Course Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter course name....." name="courseName"
+              [(ngModel)] = "newCourse.courseName"
+              required minlength="3"
+              #courseData="ngModel">
+            </div>
+          </div>
+          <div class="alert alert-warning" *ngIf = "courseData.invalid && (courseData.dirty || courseData.touched)">
+              <strong>
+                Warning! please fill in course name !!!
+              </strong>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-md-2"> Course Date:</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" name="date"
+                [(ngModel)] = "newCourse.date"
+                required>
+              </div>
+            </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-2">Course Description:</label>
+            <div class="col-md-10">
+              <textarea class="form-control" rows="5" name="description"
+              [(ngModel)] = "newCourse.description"  #desData="ngModel"
+              ></textarea>
+            </div>
+          </div>
+          <div class="alert alert-warning" *ngIf = "desData.invalid && (desData.dirty || desData.touched)">
+              <strong>
+                Warning! please fill in course descriptions !!!
+              </strong>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" 
+            [disabled]="!coData.valid">Submit</button>
+          </div>
+        </div>
+
+
+    </form>
+
+    
+
+  </div>
+</body>
+
+</html>
